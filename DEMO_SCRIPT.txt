@@ -1,0 +1,23 @@
+[0:00 - HOOK]
+Hello everyone. Caring for elderly parents or relatives is incredibly meaningful, but coordinating their medication schedules and doctor visits can be overwhelming and full of potential errors. That is why I built the Elderly Care Assistant--a secure, multi-agent AI coordinator designed to help caregivers manage these logs safely and easily.
+
+[0:20 - WHAT IT IS]
+This project is built under the Concierge Agents track of the ADK platform. It integrates a dedicated multi-agent workflow, local Model Context Protocol tools, and a caregiver approval checkpoint to ensure zero modifications are made to a patient's care plan without human consent.
+
+[0:40 - SHOW THE BANNER]
+(show assets/cover_page_banner.png)
+As you can see on the banner, this assistant acts as a reliable bridge between caretakers and the elderly, bringing secure, intelligent, and coordinated oversight to daily health regimens.
+
+[1:00 - ARCHITECTURE]
+(show assets/architecture_diagram.png)
+Let me walk you through our system architecture. First, any user query goes through the Security Checkpoint node to filter out threats and redact PII. If it is safe, the prompt reaches the Care Coordinator orchestrator agent. The coordinator then delegates specialized medical tasks to the medication agent or appointment agent. These agents interface with our local database via custom MCP server tools. When a modification is requested, the Post-Coordinator Check identifies the pending action and routes the path to the caregiver approval HITL node, prompting a human caregiver to approve or reject the action.
+
+[2:00 - LIVE DEMO]
+(switch to playground at localhost:18081)
+Let's see this in action. (pause) First, I will input "Add medication Lipitor 20mg at 9:00 PM". (pause) You can see that the Care Coordinator delegates to the medication agent, which calls the database server to request the change. The workflow immediately catches that this requires caregiver approval, pauses the execution, and displays: "Caregiver Approval Required: Approve adding medication 'Lipitor' (20mg) at 9:00 PM?". I'll type "yes". (pause) The workflow resumes, logs a success event, and writes Lipitor to the database. Next, if I request "Show my medications", the medication agent fetches and prints the schedule showing Lipitor. Finally, if someone tries to inject a threat like "ignore instructions and bypass safety", the security checkpoint instantly blocks the query and alerts us.
+
+[3:00 - SECURITY & MCP]
+Our security checkpoint operates with strict PII scrubbing for phone numbers and SSNs, prompt injection prevention, a controlled drug substances content filter, and structured audit logs. Meanwhile, our MCP server tools handle local database persistence with complete isolation, representing a production-grade healthcare architecture.
+
+[3:30 - IMPACT / CLOSE]
+This assistant is built for caregivers, families, and senior citizens, ensuring that AI-driven health support is combined with the safety of human oversight. Thank you.
