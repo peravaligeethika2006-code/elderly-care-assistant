@@ -1,0 +1,13 @@
+{
+  "medications": [],
+  "appointments": [],
+  "pending_actions": [
+    {
+      "id": "med_1",
+      "type": "add_medication",
+      "med_name": "Lipitor",
+      "dosage": "20mg",
+      "time_of_day": "9:00 PM"
+    }
+  ]
+}
