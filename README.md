@@ -96,7 +96,7 @@ graph TD
    git add .
    git commit -m "Initial commit: elderly-care-assistant ADK agent"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/elderly-care-assistant.git
+   git remote add origin https://github.com/Geethika/elderly-care-assistant.git
    git push -u origin main
    ```
 
@@ -112,8 +112,10 @@ graph TD
 ⚠ NEVER push `.env` to GitHub. Your API key will be exposed publicly.
 
 ## Assets
-- [Architecture Diagram](file:///c:/Users/perav/OneDrive/Desktop/adk-workspace/elderly-care-assistant/assets/architecture_diagram.png)
-- [Cover Banner](file:///c:/Users/perav/OneDrive/Desktop/adk-workspace/elderly-care-assistant/assets/cover_page_banner.png)
+
+![Architecture Diagram](assets/architecture_diagram.png)
+
+![Cover Page Banner](assets/cover_page_banner.png)
 
 ## Demo Script
-Refer to [DEMO_SCRIPT.txt](file:///c:/Users/perav/OneDrive/Desktop/adk-workspace/elderly-care-assistant/DEMO_SCRIPT.txt) for presentation narration.
+Refer to [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt) for presentation narration.
